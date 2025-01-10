@@ -1,6 +1,10 @@
 const TaskManager = (function () {
+    let taskList;
 
-    const taskList = document.getElementById('taskList');
+    function init(taskListElement) {
+        taskList = taskListElement;
+        loadTasks();
+    }
 
     // 讀取 LocalStorage 中的任務列表
     function loadTasks() {
@@ -41,14 +45,14 @@ const TaskManager = (function () {
 
         // 將任務加入列表
         taskList.appendChild(taskItem);
-        taskInput.value = '';
         saveTasks();
     }
 
     // 對外公開的 API
     return {
-        loadTasks,
-        saveTasks,
+        init,
         addTask,
     };
 })();
+
+export default TaskManager;
