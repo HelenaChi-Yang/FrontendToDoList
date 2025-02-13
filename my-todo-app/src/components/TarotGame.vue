@@ -80,10 +80,11 @@ export default {
   transform: rotateY(180deg);
 }
 
+/* 如果沒有給 .card-front 和 .card-back 設置 position: absolute;，它們會默認根據文檔流進行排列，它們不會重疊 */
 .card-front, .card-back {
   width: 100%;
   height: 100%;
-  /* position: absolute; */
+  position: absolute;
   backface-visibility: hidden;
   display: flex;
   align-items: center;
