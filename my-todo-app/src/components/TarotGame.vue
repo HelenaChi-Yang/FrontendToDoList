@@ -31,9 +31,28 @@ export default {
     return {
       gameStarted: false,
       cards: [
-        { name: "The Fool", flip: false},
-        { name: "The Magician", flip: false},
-        { name: "The High Priestess", flip: false}
+        { name: "The Fool", flip: false },
+        { name: "The Magician", flip: false },
+        { name: "The High Priestess", flip: false },
+        { name: "The Empress", flip: false },
+        { name: "The Emperor", flip: false },
+        { name: "The Hierophant", flip: false },
+        { name: "The Lovers", flip: false },
+        { name: "The Chariot", flip: false },
+        { name: "Strength", flip: false },
+        { name: "The Hermit", flip: false },
+        { name: "Wheel of Fortune", flip: false },
+        { name: "Justice", flip: false },
+        { name: "The Hanged Man", flip: false },
+        { name: "Death", flip: false },
+        { name: "Temperance", flip: false },
+        { name: "The Devil", flip: false },
+        { name: "The Tower", flip: false },
+        { name: "The Star", flip: false },
+        { name: "The Moon", flip: false },
+        { name: "The Sun", flip: false },
+        { name: "Judgement", flip: false },
+        { name: "The World", flip: false }
       ]
     };
   },
@@ -77,6 +96,7 @@ export default {
 
 /* 當 .card 同時擁有 flipped 類別時，讓 .card-inner 整個旋轉 180 度*/
 .flipped.card .card-inner {
+  will-change: transform;
   transform: rotateY(180deg);
 }
 
@@ -85,11 +105,13 @@ export default {
   width: 100%;
   height: 100%;
   position: absolute;
+  /* 讓 .card-front 和 .card-back 翻轉時不會同時顯示 */
   backface-visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
+  box-sizing: border-box;
 }
 
 .card-front {
